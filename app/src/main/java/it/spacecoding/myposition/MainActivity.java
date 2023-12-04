@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                     Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                     if (lastKnownLocation != null) {
                         // Send the location to the selected contact
-                        String message = "Check out my location: " + Uri.parse("geo:" + lastKnownLocation.getLatitude() + "," + lastKnownLocation.getLongitude());
+                        String message = "Mi trovo in questa posizione: " + Uri.parse("geo:" + lastKnownLocation.getLatitude() + "," + lastKnownLocation.getLongitude());
                         Intent sendIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + phoneNumber));
                         sendIntent.putExtra("sms_body", message);
                         startActivity(sendIntent);
